@@ -1,0 +1,32 @@
+{
+  "name": "tau-dcgs",
+  "version": "0.1.0",
+  "description": "Port of SWI prolog's dcg/basics and dcg/high_order for Tau Prolog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Risto-Stevcev/tau-dcgs.git"
+  },
+  "keywords": ["tau-prolog", "prolog", "dcg"],
+  "author": "Risto Stevcev",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/Risto-Stevcev/tau-dcgs/issues"
+  },
+  "homepage": "https://github.com/Risto-Stevcev/tau-dcgs#readme",
+  "peerDependencies": {
+    "tau-prolog": "^0.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
+}
