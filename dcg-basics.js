@@ -292,10 +292,12 @@ var pl
     module.exports = function (tau_prolog) {
       pl = tau_prolog
 
+      require('tau-prolog/modules/lists')(pl)
       var { predicates, exports } = code()
       new pl.type.Module(name, predicates, exports, { dependencies: ['lists'] })
     }
   } else {
+    require('tau-prolog/modules/lists')(pl)
     var { predicates, exports } = code()
     new pl.type.Module(name, predicates, exports, { dependencies: ['lists'] })
   }

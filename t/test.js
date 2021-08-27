@@ -1,7 +1,6 @@
 const test = require('tape')
 const pl = require('tau-prolog')
 
-require('tau-prolog/modules/lists')(pl)
 require('tau-prolog/modules/promises')(pl)
 require('../dcg-basics')(pl)
 
