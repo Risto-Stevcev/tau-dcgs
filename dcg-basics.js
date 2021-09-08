@@ -12,12 +12,9 @@ var pl
             new pl.type.Var('List')
           ]),
           new pl.type.Term('once', [
-            new pl.type.Term(':', [
-              new pl.type.Term('lists', []),
-              new pl.type.Term('member', [
-                new pl.type.Var('Elem'),
-                new pl.type.Var('List')
-              ])
+            new pl.type.Term('member', [
+              new pl.type.Var('Elem'),
+              new pl.type.Var('List')
             ])
           ])
         )
@@ -197,6 +194,52 @@ var pl
               new pl.type.Var('X')
             ])
           ])
+        ),
+        new pl.type.Rule(
+          new pl.type.Term('code_type', [
+            new pl.type.Var('C'),
+            new pl.type.Term('digit', [])
+          ]),
+          new pl.type.Term(',', [
+            new pl.type.Term('member', [
+              new pl.type.Var('X'),
+              new pl.type.Term('.', [
+                new pl.type.Num(48, false),
+                new pl.type.Term('.', [
+                  new pl.type.Num(49, false),
+                  new pl.type.Term('.', [
+                    new pl.type.Num(50, false),
+                    new pl.type.Term('.', [
+                      new pl.type.Num(51, false),
+                      new pl.type.Term('.', [
+                        new pl.type.Num(52, false),
+                        new pl.type.Term('.', [
+                          new pl.type.Num(53, false),
+                          new pl.type.Term('.', [
+                            new pl.type.Num(54, false),
+                            new pl.type.Term('.', [
+                              new pl.type.Num(55, false),
+                              new pl.type.Term('.', [
+                                new pl.type.Num(56, false),
+                                new pl.type.Term('.', [
+                                  new pl.type.Num(57, false),
+                                  new pl.type.Term('[]', [])
+                                ])
+                              ])
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            new pl.type.Term('char_code', [
+              new pl.type.Var('C'),
+              new pl.type.Var('X')
+            ])
+          ])
         )
       ],
       'blank/2': [
@@ -223,31 +266,34 @@ var pl
           ])
         )
       ],
-      'eol/2': [
+      'digit/3': [
         new pl.type.Rule(
-          new pl.type.Term('eol', [
+          new pl.type.Term('digit', [
+            new pl.type.Var('_6'),
             new pl.type.Term('.', [
-              new pl.type.Term('\n', []),
+              new pl.type.Var('_6'),
               new pl.type.Var('_29')
             ]),
             new pl.type.Var('_30')
           ]),
           new pl.type.Term(',', [
-            new pl.type.Term('!', []),
+            new pl.type.Term('code_type', [
+              new pl.type.Var('_6'),
+              new pl.type.Term('digit', [])
+            ]),
             new pl.type.Term('=', [
               new pl.type.Var('_29'),
               new pl.type.Var('_30')
             ])
           ])
-        ),
+        )
+      ],
+      'eol/2': [
         new pl.type.Rule(
           new pl.type.Term('eol', [
             new pl.type.Term('.', [
-              new pl.type.Term('\r', []),
-              new pl.type.Term('.', [
-                new pl.type.Term('\n', []),
-                new pl.type.Var('_32')
-              ])
+              new pl.type.Term('\n', []),
+              new pl.type.Var('_32')
             ]),
             new pl.type.Var('_33')
           ]),
@@ -261,12 +307,31 @@ var pl
         ),
         new pl.type.Rule(
           new pl.type.Term('eol', [
-            new pl.type.Var('_34'),
-            new pl.type.Var('_35')
+            new pl.type.Term('.', [
+              new pl.type.Term('\r', []),
+              new pl.type.Term('.', [
+                new pl.type.Term('\n', []),
+                new pl.type.Var('_35')
+              ])
+            ]),
+            new pl.type.Var('_36')
+          ]),
+          new pl.type.Term(',', [
+            new pl.type.Term('!', []),
+            new pl.type.Term('=', [
+              new pl.type.Var('_35'),
+              new pl.type.Var('_36')
+            ])
+          ])
+        ),
+        new pl.type.Rule(
+          new pl.type.Term('eol', [
+            new pl.type.Var('_37'),
+            new pl.type.Var('_38')
           ]),
           new pl.type.Term('eos', [
-            new pl.type.Var('_34'),
-            new pl.type.Var('_35')
+            new pl.type.Var('_37'),
+            new pl.type.Var('_38')
           ])
         )
       ],
